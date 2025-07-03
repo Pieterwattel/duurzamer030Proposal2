@@ -58,10 +58,21 @@ header a{
 }
 
 nav{
+  padding-left: 3vw;
+  padding-right: 3vw;
+  gap: 20vw;
   display: flex;
   justify-content: space-around;  
   align-items: center;
 }
+
+nav div{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+}
+
 
 main{
   height: 100vh;
@@ -125,6 +136,7 @@ justify-content: end;
 @media only screen and (max-width: 600px) {
   nav{
     flex-direction: column;
+  gap: 0;
   }
 
 #searchDiv,
@@ -178,7 +190,7 @@ img{
 /* -backgrounds- */
 /* #region */
 header{
-  background-color: rgba(23, 142, 31);
+  background-color: rgba(23, 142, 31, 0.849);
 }
 
 
