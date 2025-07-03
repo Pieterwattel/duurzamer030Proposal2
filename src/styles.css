@@ -1,22 +1,35 @@
 /*base - formatting*/
 /* #region */
+
+
+@font-face {
+  font-family: roboto;
+  src: url(./Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: prompt;
+  src: url(./Prompt-Light.ttf);
+}
+
 * {
-  outline: 1px solid rebeccapurple;
-  background-color: rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  font-size: 20px;
+  font-family: 'roboto';
 }
 
 html {
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
 
 body {
   width: 100%;
-  height: 100%;
   margin: 0;
+    overflow-y: hidden;
+
 }
 
 one-sec-shadow-host,
@@ -29,16 +42,154 @@ one-sec-shadow-host > * {
 }
 /* #endregion*/
 
-/* -content placement- */
+/* -sizing & placement-*/
 /* #region */
-/* #endregion*/
+header{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
 
-/* -sizing-*/
-/* #region */
+header a{
+  padding: 0.5em;
+  font-family: 'prompt';
+  font-weight: 100;
+  color: black;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;  
+  align-items: center;
+}
+
+main{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#infoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#infoBlock img{
+   width: calc(9em + 10vw);
+   height: auto;
+}
+
+#infoBlock h1{
+  width: fit-content;
+}
+
+#centralContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+
+#searchBar{
+  width: 100%;
+justify-content: end;
+}
+
+#searchDiv,
+#otherStuffDiv{
+   width: calc(9em + 10vw);
+}
+
+
+#searchForm{
+  max-width: calc(8em + 10vw);
+  display: flex;
+}
+
+#searchForm input{
+  max-width: calc(7em + 10vw);
+  margin: 0;
+  height: 1.5em;
+}
+
+
+
+#contentDiv{
+   width: 100%
+}
+
+@media only screen and (max-width: 600px) {
+  nav{
+    flex-direction: column;
+  }
+
+#searchDiv,
+#otherStuffDiv{
+   width: 90vw;
+}
+
+
+#searchForm{
+  max-width: 90vw;
+  display: flex;
+}
+
+#searchForm input{
+  min-width: calc(90vw - 4em);
+  margin: 0;
+  height: 1.5em;
+}
+}
+
+#searchForm button{
+margin: 0;
+height: 1.5em;
+}
+
+.scrollIdeas a {
+  margin-right: 2rem !important;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  height: 2em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 2em;
+  align-items: center;
+
+}
+
+img{
+  height: 2em;
+  width: auto;
+}
+
 /* #endregion */
 
 /* -backgrounds- */
 /* #region */
+header{
+  background-color: rgba(23, 142, 31);
+}
+
+
+main{
+  background-image: url(./uitzicht3.webp);
+  background-size: cover;
+}
+
+footer{
+  background-color: white;
+}
 /* #endregion */
 
 /*container-relative placements*/
@@ -51,4 +202,94 @@ one-sec-shadow-host > * {
 
 /* -specific formatting- */
 /* #region */
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+#searchDiv,
+#otherStuffDiv{
+  padding: 1em;
+  border: 5px solid rgb(227, 63, 59);
+  background-color: white;
+}
+
+#contentDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;  /* hide the overflowing parts */
+  white-space: nowrap; /* prevent wrapping, all on one line */
+  max-width: 100%;
+}
+
+#searchForm *{
+  }
+
+#searchForm input{
+  width: 100%;
+  margin: 0;
+  height: 1.5em;
+  border: 1px solid black;
+}
+
+#searchForm button{
+  margin: 0;
+  height: 1.5em;
+  border: 1px solid black;
+}
+
+#searchForm button:hover{
+  background-color: rgb(131, 131, 131);
+}
+
+
+.scrollIdeas{
+  padding: 0.2em;
+}
+
+.marquee{
+  display: flex;
+  white-space: nowrap;
+  animation: scrollLeft 400s linear infinite;
+  width: fit-content;
+}
+
+.scrollIdeas a{
+  color: rgb(0, 0, 0);
+}
+
+.rubrieken{
+  margin-top: 1em;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.rubrieken *{
+    text-align: center;
+}
+
+.rubrieken select *{
+  font-size: 1rem;
+}
+
+form input::placeholder{
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* #endregion */
